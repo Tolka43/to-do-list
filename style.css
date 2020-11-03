@@ -17,10 +17,10 @@ body {
   margin-bottom: 10px;
   width: 100%;
   font-size: 20px;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
-.text-input {
+.task-input {
   border: none;
   border-bottom: 1px solid rgba(201, 199, 199, 0.8);
   margin-bottom: 10px;
@@ -41,34 +41,45 @@ body {
   color: white;
   background-color: brown;
   margin-bottom: 10px;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .add-button:hover {
   border: none;
   color: white;
-  transition-duration: 0.3s;
+  transition: 0.3s;
   background-color: rgb(190, 54, 54);
 }
 
 .tasks {
-    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-    margin-bottom: 30px;
-    height: 30px;
-    width: 100%;
-    font-family: 'Jost', sans-serif;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  margin-bottom: 30px;
+  width: 100%;
+  font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.task-div {
+  padding: 10px 20px;
+}
+
+.task-div:hover {
+  background-color: rgba(201, 199, 199, 0.4);
+  transition: 0.2s;
 }
 
 #find-task {
-    border: none;
-    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-    width: 200px;
-    margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  width: 200px;
+  margin-bottom: 30px;
 }
 
 #tasks-select {
-    border: none;
-    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-    width: 200px;
-    margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  width: 200px;
+  margin-bottom: 10px;
 }

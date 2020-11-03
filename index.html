@@ -4,21 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>to do list</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital@1&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/20442cd415.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="main-container">
       <div class="header"><h3>To Do List</h3></div>
-      <input type="text" class="text-input" />
+      <input type="text" class="task-input" />
       <button class="add-button">ADD TASK</button>
-      <div class="tasks">tasks list</div>
-      <input id="find-task" type="text" value="What are you looking for?"/>
+      <div class="tasks"></div>
+      <input id="find-task" type="text" value="What are you looking for?" />
       <select name="" id="tasks-select">
         <option value="all">All</option>
         <option value="to-do">To do</option>
         <option value="done">Done</option>
       </select>
+      <div></div>
     </div>
     <script src="script.js"></script>
   </body>
