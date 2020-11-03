@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>to do list</title>
-</head>
-<body>
-    
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header"><h3>To Do List</h3></div>
+      <input type="text" class="text-input" />
+      <button class="add-button">ADD TASK</button>
+      <div class="tasks">tasks list</div>
+      <input id="find-task" type="text" value="What are you looking for?"/>
+      <select name="" id="tasks-select">
+        <option value="all">All</option>
+        <option value="to-do">To do</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

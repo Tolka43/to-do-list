@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(197, 197, 197);
+}
+
+.main-container {
+  margin: 100px 325px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+}
+
+.header {
+  background-color: brown;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 20px;
+  font-family: 'Jost', sans-serif;
+}
+
+.text-input {
+  border: none;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  margin-bottom: 10px;
+  height: 30px;
+  width: 99%;
+}
+
+.text-input:focus {
+  border: none;
+  border-bottom: orangered;
+}
+
+.add-button {
+  width: 100px;
+  align-self: center;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: brown;
+  margin-bottom: 10px;
+  font-family: 'Jost', sans-serif;
+}
+
+.add-button:hover {
+  border: none;
+  color: white;
+  transition-duration: 0.3s;
+  background-color: rgb(190, 54, 54);
+}
+
+.tasks {
+    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+    margin-bottom: 30px;
+    height: 30px;
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+}
+
+#find-task {
+    border: none;
+    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+#tasks-select {
+    border: none;
+    border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+    width: 200px;
+    margin-bottom: 10px;
+}
