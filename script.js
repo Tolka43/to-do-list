@@ -2,6 +2,7 @@ const taskInput = document.querySelector(".task-input");
 const addButton = document.querySelector(".add-button");
 const tasksDiv = document.querySelector(".tasks");
 const body = document.querySelector("body");
+const taskSelect = document.querySelector("#tasks-select")
 
 const createTask = () => {
   const taskDiv = document.createElement("div");
@@ -59,3 +60,12 @@ const enterKeydownListener = (event) => {
 };
 
 body.addEventListener("keydown", enterKeydownListener);
+
+// const filterTasks = () => {
+//   const tasksArr = Array.from(tasksDiv.children)
+//   if(taskSelect.value === 'to-do'){
+//     tasksArr.filter((task) => {})
+//   }
+// }
+
+// taskSelect.addEventListener('change', filterTasks)

@@ -31,11 +31,6 @@ body {
   width: 99%;
 }
 
-.text-input:focus {
-  border: none;
-  border-bottom: orangered;
-}
-
 .add-button {
   width: 100px;
   padding: 10px;
@@ -67,7 +62,6 @@ body {
 .task-div {
   padding: 10px 20px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
 }
