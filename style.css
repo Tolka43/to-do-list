@@ -12,6 +12,15 @@ body {
   color: white;
   justify-content: center;
   box-shadow: 1px 1px 4px #686868ad;
+  font-family: "Jost", sans-serif;
+}
+
+.bg-primary {
+  background-color: #085eb9!important;
+}
+
+h4 {
+  margin: 10px 0;
 }
 
 .task-input {
@@ -24,10 +33,61 @@ body {
 }
 
 .add-button {
-  width: 120px;
+  width: 110px;
   align-self: center;
+  box-shadow: 1px 1px 4px #686868ad;
+  font-family: "Jost", sans-serif;
+}
+
+.btn-primary {
+  background-color: #085eb9;
+  border-color: #085eb9;
 }
 
 .tasks {
   border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  margin-bottom: 30px;
+  width: 100%;
+  font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.task-div {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.task-text {
+  margin: 0;
+}
+
+.fas {
+  cursor: pointer;
+  color: #085eb9;
+}
+
+.fas:hover {
+  color: #127ef1;
+}
+
+.task-div:hover {
+  background-color: rgba(201, 199, 199, 0.4);
+  transition: 0.2s;
+}
+
+#tasks-select {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+#tasks-select { 
+  cursor: pointer;
+  align-self: center;
 }
