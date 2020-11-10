@@ -3,8 +3,9 @@ const addButton = document.querySelector(".add-button");
 const tasksDiv = document.querySelector(".tasks");
 const body = document.querySelector("body");
 const taskSelect = document.querySelector("#tasks-select");
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-const createTask = (text) => {
+const createTask = (task) => {
   const taskDiv = document.createElement("div");
   const bin = document.createElement("i");
   const textParagraph = document.createElement("p");
@@ -14,26 +15,37 @@ const createTask = (text) => {
   textParagraph.classList.add("task-text");
 
   textParagraph.style.color = "black";
-  textParagraph.innerHTML = text || taskInput.value;
+  textParagraph.innerText = task.text || taskInput.value;
   taskInput.value = "";
 
   function binAction() {
-    bin.style.cursor = "grab";
+    bin.style.cursor = "pointer";
     taskDiv.remove();
+    const taskText = textParagraph.innerText;
+    tasks = tasks.filter((task) => task.text !== taskText);
+    updateTasksInLocalStorage();
   }
 
   bin.addEventListener("click", binAction);
 
   function tasksAction() {
-    if (
-      textParagraph.style.color !== "grey" &&
-      textParagraph.style.textDecoration !== "line-through"
-    ) {
+    const taskText = textParagraph.innerText;
+    const task = tasks.filter((task) => taskText === task.text);
+    console.log(task);
+    if (task[0].state === "to-do") {
       textParagraph.style.textDecoration = "line-through";
       textParagraph.style.color = "grey";
+      tasks.forEach((task) =>
+        task.text === taskText ? (task.state = "done") : task.state
+      );
+      updateTasksInLocalStorage();
     } else {
       textParagraph.style.removeProperty("text-decoration");
       textParagraph.style.color = "black";
+      tasks.forEach((task) =>
+        task.text === taskText ? (task.state = "to-do") : task.state
+      );
+      updateTasksInLocalStorage();
     }
   }
 
@@ -44,49 +56,62 @@ const createTask = (text) => {
   return taskDiv;
 };
 
-const addTask = () => {
-  if (taskInput.value) {
-    tasksDiv.appendChild(createTask());
+function updateTasksInLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function refreshView() {
+  tasksDiv.innerHTML = "";
+  tasks.forEach((task) => {
+    const taskDiv = createTask(task);
+    tasksDiv.appendChild(taskDiv);
+  });
+}
+
+const addTask = (text) => {
+  if (text || taskInput.value) {
+    const newTask = { text: text || taskInput.value, state: "to-do" };
+    tasks.push(newTask);
+    updateTasksInLocalStorage();
+    refreshView();
   } else {
     alert("You cannot add empty task!");
   }
 };
 
-addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", (event) => {
+  addTask();
+});
+
+refreshView();
 
 const enterKeydownListener = (event) => {
   if (event.key === "Enter") {
-    return addTask();
+    addTask();
   }
 };
 
 body.addEventListener("keydown", enterKeydownListener);
 
-const filterTasks = () => {
-  const taskDivs = Array.from(document.querySelectorAll(".task-div"));
+const filterTasksByState = () => {
+  const toDoTasks = tasks.filter((task) => task.state === "to-do");
+  const doneTasks = tasks.filter((task) => task.state === "done");
+  const appendTasksToTasksDiv = (task) => {
+    const taskCard = createTask(task);
+    tasksDiv.appendChild(taskCard);
+  };
 
-  const taskParagraphs = taskDivs.map((task) => Array.from(task.children)[0]);
-
-  const toDoTasks = taskParagraphs.filter(
-    (task) => task.style.color === "black"
-  );
-  const doneTasks = taskParagraphs.filter((task) => task.style.color == "grey");
-
-  if(taskSelect.value === 'to-do'){
-  tasksDiv.innerHTML = "";
-  toDoTasks.forEach((task) => tasksDiv.appendChild(createTask(task.innerHTML)));} else if (taskSelect.value === 'done') {
+  if (taskSelect.value === "to-do") {
     tasksDiv.innerHTML = "";
-    doneTasks.forEach((task) => tasksDiv.appendChild(createTask(task.innerHTML)));
+    console.log(toDoTasks);
+    toDoTasks.forEach(appendTasksToTasksDiv);
+  } else if (taskSelect.value === "done") {
+    tasksDiv.innerHTML = "";
+    console.log(doneTasks);
+    doneTasks.forEach(appendTasksToTasksDiv);
+  } else {
+    refreshView();
   }
-
-
 };
 
-// const filterTasks = () => {
-//   const tasksArr = Array.from(tasksDiv.children)
-//   if(taskSelect.value === 'to-do'){
-//     tasksArr.filter((task) => {})
-//   }
-// }
-
-taskSelect.addEventListener('change', filterTasks)
+taskSelect.addEventListener("change", filterTasksByState);
