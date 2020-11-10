@@ -84,7 +84,7 @@ body {
   transition: 0.2s;
 }
 
-#find-task,
+#find-tasks,
 #tasks-select {
   border: none;
   outline: none;

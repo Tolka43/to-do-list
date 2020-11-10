@@ -3,6 +3,7 @@ const addButton = document.querySelector(".add-button");
 const tasksDiv = document.querySelector(".tasks");
 const body = document.querySelector("body");
 const taskSelect = document.querySelector("#tasks-select");
+const findTasks = document.querySelector('#find-tasks')
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 const createTask = (task) => {
@@ -14,7 +15,13 @@ const createTask = (task) => {
   taskDiv.classList.add("task-div");
   textParagraph.classList.add("task-text");
 
-  textParagraph.style.color = "black";
+  if (task.state === "to-do") {
+    textParagraph.style.color = "black";
+    textParagraph.style.textDecoration = "none";
+  } else {
+    textParagraph.style.textDecoration = "line-through";
+    textParagraph.style.color = "grey";
+  }
   textParagraph.innerText = task.text || taskInput.value;
   taskInput.value = "";
 
@@ -56,12 +63,16 @@ const createTask = (task) => {
   return taskDiv;
 };
 
+function clearTasksDiv() {
+  tasksDiv.innerHTML = "";
+}
+
 function updateTasksInLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function refreshView() {
-  tasksDiv.innerHTML = "";
+  clearTasksDiv();
   tasks.forEach((task) => {
     const taskDiv = createTask(task);
     tasksDiv.appendChild(taskDiv);
@@ -102,12 +113,10 @@ const filterTasksByState = () => {
   };
 
   if (taskSelect.value === "to-do") {
-    tasksDiv.innerHTML = "";
-    console.log(toDoTasks);
+    clearTasksDiv();
     toDoTasks.forEach(appendTasksToTasksDiv);
   } else if (taskSelect.value === "done") {
-    tasksDiv.innerHTML = "";
-    console.log(doneTasks);
+    clearTasksDiv();
     doneTasks.forEach(appendTasksToTasksDiv);
   } else {
     refreshView();
@@ -115,3 +124,9 @@ const filterTasksByState = () => {
 };
 
 taskSelect.addEventListener("change", filterTasksByState);
+
+const filterTasksByLetters = () => {
+
+}
+
+findTasks.addEventListener('change', filterTasksByLetters)
