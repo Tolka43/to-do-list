@@ -14,3 +14,20 @@ body {
   box-shadow: 1px 1px 4px #686868ad;
 }
 
+.task-input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+  margin: 10px 0;
+  height: 30px;
+  width: 100%;
+}
+
+.add-button {
+  width: 120px;
+  align-self: center;
+}
+
+.tasks {
+  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
+}
