@@ -84,12 +84,11 @@ body {
   transition: 0.2s;
 }
 
-#find-tasks,
 #tasks-select {
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-  width: 200px;
+  width: 150px;
   margin-bottom: 30px;
 }
 
