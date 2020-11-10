@@ -4,94 +4,13 @@ body {
 
 .main-container {
   margin: 5% 25%;
-  display: flex;
-  flex-direction: column;
   background-color: white;
-  align-items: center;
   box-shadow: 1px 1px 4px #686868ad;
 }
 
-.header {
-  background-color: brown;
-  text-align: center;
+.navbar {
   color: white;
-  margin-bottom: 10px;
-  width: 100%;
-  font-size: 20px;
-  font-family: "Jost", sans-serif;
+  justify-content: center;
   box-shadow: 1px 1px 4px #686868ad;
 }
 
-.task-input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-  margin-bottom: 10px;
-  height: 30px;
-  width: 99%;
-}
-
-.add-button {
-  width: 100px;
-  padding: 10px;
-  border: none;
-  color: white;
-  background-color: brown;
-  margin-bottom: 10px;
-  font-family: "Jost", sans-serif;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 1px 1px 4px #686868ad;
-}
-
-.add-button:hover {
-  transition: 0.3s;
-  background-color: rgb(190, 54, 54);
-}
-
-.tasks {
-  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-  margin-bottom: 30px;
-  width: 100%;
-  font-family: "Jost", sans-serif;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-}
-
-.task-div {
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.task-text {
-  margin: 0;
-}
-
-.fas {
-  cursor: pointer;
-  color: brown;
-}
-
-.fas:hover {
-  color: rgb(88, 13, 13);
-}
-
-.task-div:hover {
-  background-color: rgba(201, 199, 199, 0.4);
-  transition: 0.2s;
-}
-
-#tasks-select {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid rgba(201, 199, 199, 0.8);
-  width: 150px;
-  margin-bottom: 30px;
-}
-
-#tasks-select { 
-  cursor: pointer;
-}
