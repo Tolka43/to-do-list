@@ -3,7 +3,9 @@ body {
 }
 
 .main-container {
-  margin: 5% 25%;
+  margin: 5% auto;
+  min-width: 220px;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   background-color: white;
