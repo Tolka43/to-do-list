@@ -3,9 +3,9 @@ body {
 }
 
 .main-container {
-  margin: 5% auto;
+  margin: 8% auto;
   min-width: 220px;
-  max-width: 700px;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -22,6 +22,11 @@ body {
   font-size: 20px;
   font-family: "Jost", sans-serif;
   box-shadow: 1px 1px 4px #686868ad;
+  height: 65px;
+}
+
+h3 {
+  margin: 15.5px 0;
 }
 
 .task-input {

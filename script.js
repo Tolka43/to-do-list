@@ -124,9 +124,3 @@ const filterTasksByState = () => {
 };
 
 taskSelect.addEventListener("change", filterTasksByState);
-
-const filterTasksByLetters = () => {
-
-}
-
-findTasks.addEventListener('change', filterTasksByLetters)
